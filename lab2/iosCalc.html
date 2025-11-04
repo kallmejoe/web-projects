@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimal iOS Calculator</title>
+<style>
+  body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .calculator {
+    width: 240px;
+  }
+
+  .display {
+    background: #111;
+    text-align: right;
+    padding: 15px;
+    font-size: 32px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  button {
+    background: #333;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  button.operator {
+    background: orange;
+  }
+
+  button.zero {
+    grid-column: span 2;
+    border-radius: 40px;
+  }
+
+  button:active {
+    background: #666;
+  }
+</style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button onclick="clearDisplay()">AC</button>
+      <button onclick="toggleSign()">±</button>
+      <button onclick="percent()">%</button>
+      <button class="operator" onclick="setOp('/')">÷</button>
+
+      <button onclick="append(7)">7</button>
+      <button onclick="append(8)">8</button>
+      <button onclick="append(9)">9</button>
+      <button class="operator" onclick="setOp('*')">×</button>
+
+      <button onclick="append(4)">4</button>
+      <button onclick="append(5)">5</button>
+      <button onclick="append(6)">6</button>
+      <button class="operator" onclick="setOp('-')">−</button>
+
+      <button onclick="append(1)">1</button>
+      <button onclick="append(2)">2</button>
+      <button onclick="append(3)">3</button>
+      <button class="operator" onclick="setOp('+')">+</button>
+
+      <button class="zero" onclick="append(0)">0</button>
+      <button class="operator" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    let current = '';
+    let previous = '';
+    let operator = null;
+
+    const display = document.getElementById('display');
+
+    function append(num) {
+      if (current.length < 9) {
+        current += num;
+        updateDisplay(current);
+      }
+    }
+
+    function clearDisplay() {
+      current = '';
+      previous = '';
+      operator = null;
+      updateDisplay(0);
+    }
+
+    function updateDisplay(value) {
+      display.textContent = value;
+    }
+
+    function setOp(op) {
+      if (current === '') return;
+      if (previous !== '') calculate();
+      operator = op;
+      previous = current;
+      current = '';
+    }
+
+    function calculate() {
+      if (operator === null || current === '') return;
+      const a = parseInt(previous);
+      const b = parseInt(current);
+      let result = 0;
+      if (operator === '+') result = a + b;
+      if (operator === '-') result = a - b;
+      if (operator === '*') result = a * b;
+      if (operator === '/') result = b === 0 ? 0 : Math.floor(a / b);
+      updateDisplay(result);
+      current = String(result);
+      previous = '';
+      operator = null;
+    }
+
+    function toggleSign() {
+      if (current === '') return;
+      current = String(-parseInt(current));
+      updateDisplay(current);
+    }
+
+    function percent() {
+      if (current === '') return;
+      current = String(Math.floor(parseInt(current) / 100));
+      updateDisplay(current);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youssef Tarek | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f0f11;
+      --fg: #f1f1f1;
+      --accent: #6c63ff;
+      --muted: #999;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: var(--accent);
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    section {
+      max-width: 700px;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .projects {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .project {
+      background: #1a1a1d;
+      padding: 1rem;
+      border-radius: 10px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .project:hover {
+      background: #222225;
+      transform: translateY(-3px);
+    }
+
+    .project h3 {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Youssef Tarek</h1>
+    <p>Software Engineer | Founder of Yaleeq | Productivity Enthusiast</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a passionate software engineer and CSE student at Ain Shams University.
+      I love building systems from scratch, exploring deep technical topics, and creating
+      products that bring real value. I’m also the founder of <strong>Yaleeq</strong> — a platform that helps students find internships and close the skill gap between education and the market.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Yaleeq</h3>
+        <p>A platform to connect students with meaningful internships and help them grow through real opportunities.</p>
+      </div>
+      <div class="project">
+        <h3>Invoice App</h3>
+        <p>Offline-first invoicing system with peer-to-peer sync and a modern UI built using React and Supabase.</p>
+      </div>
+      <div class="project">
+        <h3>Job Explorer</h3>
+        <p>A Next.js app with SSR-safe API fetch wrappers and dynamic job filters, inspired by Notion’s clean UX.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Reach out at <a href="mailto:youssef@example.com">youssef@example.com</a> or find me on <a href="#">LinkedIn</a>.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Youssef Tarek. All rights reserved.</p>
+  </footer>
+</body>
+</html>
