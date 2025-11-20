@@ -1,0 +1,138 @@
+.header {
+  border-bottom: 1px solid #d1d7dc;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  max-width: 1340px;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #a435f0;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1c1d1f;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 8px 12px;
+}
+
+.nav-links a:hover {
+  color: #a435f0;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1px solid #1c1d1f;
+  border-radius: 50px;
+  overflow: hidden;
+  background: #f7f9fa;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  padding: 12px 16px;
+  font-size: 14px;
+  background: transparent;
+  outline: none;
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-right a {
+  text-decoration: none;
+  color: #1c1d1f;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.header-right a:hover {
+  color: #a435f0;
+}
+
+.cart-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.btn-login {
+  padding: 10px 16px;
+  border: 1px solid #1c1d1f;
+  background: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-login:hover {
+  background: #f7f9fa;
+}
+
+.btn-signup {
+  padding: 10px 16px;
+  border: none;
+  background: #1c1d1f;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-signup:hover {
+  background: #0f1111;
+}
+
+.btn-language {
+  padding: 8px;
+  border: 1px solid #1c1d1f;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-language:hover {
+  background: #f7f9fa;
+}
